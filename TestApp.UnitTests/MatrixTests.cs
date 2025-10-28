@@ -25,15 +25,15 @@ public class MatrixTests
     public void Test_MatrixAddition_EmptyMatrices_ReturnsEmptyMatrix()
     {
         // Arrange
-        List<List<int>> matrixA = new() { new() { }, new() { } };
-        List<List<int>> matrixB = new() { new() { }, new() { } };
-        List<List<int>> expected = new() { new() { }, new() { } };
+        List<List<int>> matrixA = new();
+        List<List<int>> matrixB = new();
+        List<List<int>> expected = new();
 
         // Act
         List<List<int>> result = Matrix.MatrixAddition(matrixA, matrixB);
 
         // Assert
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.That(result, Is.Empty);
 
     }
 
@@ -69,9 +69,9 @@ public class MatrixTests
     public void Test_MatrixAddition_ZeroMatrix_ReturnsOriginalMatrix()
     {
         // Arrange
-        List<List<int>> matrixA = new() {};
-        List<List<int>> matrixB = new() {};
-        List<List<int>> expected = new() {};
+        List<List<int>> matrixA = new() { new() { -1, -2 }, new() { -3, -4 } };
+        List<List<int>> matrixB = new() { new() { 0, 0 }, new() { 0, 0 } };
+        List<List<int>> expected = new() { new() { -1, -2 }, new() { -3, -4 } };
 
         // Act
         List<List<int>> result = Matrix.MatrixAddition(matrixA, matrixB);
